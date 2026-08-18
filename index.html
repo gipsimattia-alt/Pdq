@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#314b22" />
+  <meta name="description" content="Parco delle Querce — prenota un tavolo o richiedi un ordine da asporto." />
+  <title>Parco delle Querce | Prenota</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn" aria-label="Apri menu" id="menuBtn">☰</button>
+    <a class="brand" href="#home" data-page="home">
+      <img src="assets/logo-parco.png" alt="Parco delle Querce">
+      <span><b>PARCO DELLE QUERCE</b><small>AGRITURISMO</small></span>
+    </a>
+    <a class="whatsapp-mini" href="https://wa.me/393317702747" target="_blank" rel="noopener" aria-label="WhatsApp">◉</a>
+  </header>
+
+  <main id="app">
+    <section class="page active" id="home">
+      <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">PARCO DELLE QUERCE</p>
+          <h1>Cucina,<br>memoria,<br><em>territorio.</em></h1>
+          <p>Sapori della Tuscia, tradizione e creatività.</p>
+        </div>
+      </div>
+      <div class="home-actions">
+        <button class="primary-btn" data-go="prenota">🍽️ PRENOTA UN TAVOLO</button>
+        <button class="secondary-btn" data-go="asporto">🥡 ASPORTO</button>
+      </div>
+      <section class="story-card">
+        <p class="eyebrow">LA NOSTRA CUCINA</p>
+        <h2>Una storia d’amore verso le persone, il cibo e la vita.</h2>
+        <p>Un luogo nato per raccontare e restituire valore al territorio, alla cucina delle radici e all’arte dell’ospitalità.</p>
+        <button class="text-btn" data-go="menu">SCOPRI IL MENÙ →</button>
+      </section>
+      <section class="info-grid">
+        <div><span>📍</span><b>Valentano, Tuscia</b><small>SP Piansanese, Km 15,500</small></div>
+        <div><span>📲</span><b>Contatti</b><small>WhatsApp per richieste e prenotazioni</small></div>
+      </section>
+    </section>
+
+    <section class="page" id="menu">
+      <div class="page-head"><button class="back" data-go="home">←</button><div><p class="eyebrow">PARCO DELLE QUERCE</p><h2>Menù</h2></div></div>
+      <div class="menu-intro"><span>ESTATE 2026</span><b>Cucina, memoria, territorio.</b><a href="bozza.Menu_estate2026(2).pdf" target="_blank">Apri il menù completo PDF ↗</a></div>
+      <div class="chips" id="menuChips"></div>
+      <div id="menuList" class="menu-list"></div>
+      <div class="allergy"><b>Allergie e intolleranze</b><p>Segnalale prima dell’ordinazione. Il menù prevede anche proposte vegetariane, vegane e senza glutine; per chiarimenti rivolgersi al personale.</p></div>
+    </section>
+
+    <section class="page" id="prenota">
+      <div class="page-head"><button class="back" data-go="home">←</button><div><p class="eyebrow">PRENOTAZIONE</p><h2>Prenota un tavolo</h2></div></div>
+      <div class="steps"><span class="on">1</span><i></i><span>2</span><i></i><span>3</span></div>
+      <form id="bookingForm" class="form-card">
+        <label>📅 Data<input type="date" id="bookingDate" required></label>
+        <label>👥 Persone<input type="number" id="bookingPeople" min="1" max="30" value="2" required></label>
+        <label>🕐 Orario
+          <select id="bookingTime" required><option value="">Scegli l'orario</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option><option>22:00</option></select>
+        </label>
+        <label>👤 Nome e cognome<input type="text" id="bookingName" placeholder="Mario Rossi" required></label>
+        <label>📱 Telefono<input type="tel" id="bookingPhone" placeholder="Il tuo numero" required></label>
+        <label>📝 Note / allergie<textarea id="bookingNotes" rows="3" placeholder="Eventuali esigenze..." ></textarea></label>
+        <div class="summary"><span>Richiesta per</span><strong id="bookingSummary">2 persone</strong></div>
+        <button class="primary-btn" type="submit">📲 INVIA RICHIESTA WHATSAPP</button>
+        <p class="small-note">La richiesta viene inviata su WhatsApp e sarà confermata dal nostro staff.</p>
+      </form>
+    </section>
+
+    <section class="page" id="asporto">
+      <div class="page-head"><button class="back" data-go="home">←</button><div><p class="eyebrow">DALLA NOSTRA CUCINA ALLA TUA</p><h2>Asporto</h2></div></div>
+      <p class="lead">Scegli cosa vuoi portare a casa. L’ordine viene inviato su WhatsApp per verifica e conferma.</p>
+      <div class="chips" id="takeawayChips"></div>
+      <div id="takeawayList" class="takeaway-list"></div>
+      <div class="order-bar"><div><small>Totale indicativo</small><strong id="orderTotal">€0,00</strong></div><button class="primary-btn" id="sendOrder">📲 INVIA ORDINE</button></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navigazione principale">
+    <button data-go="home" class="nav-item active"><span>⌂</span>Home</button>
+    <button data-go="menu" class="nav-item"><span>🍴</span>Menù</button>
+    <button data-go="prenota" class="nav-item"><span>📅</span>Prenota</button>
+    <button data-go="asporto" class="nav-item"><span>🥡</span>Asporto</button>
+  </nav>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
