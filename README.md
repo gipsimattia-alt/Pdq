@@ -2,17 +2,15 @@
 
 Sito statico pronto per GitHub Pages.
 
+## Sezioni
+- Home
+- Menù
+- Prenota un tavolo
+- Asporto: pizze bianche, pizze rosse, pizze stagionali, calzoni e fritti
+
+## WhatsApp prenotazioni
+Il pulsante **Prenota un tavolo** invia la richiesta direttamente a Cristiano su WhatsApp:
+**+39 331 770 2747**.
+
 ## Pubblicazione
-Carica nella root del repository:
-- `index.html`
-- `style.css`
-- `app.js`
-- `assets/logo-parco.png`
-- `assets/hero.jpg`
-- `bozza.Menu_estate2026(2).pdf`
-
-Poi attiva GitHub Pages dalla branch `main` e cartella `/root`.
-
-## WhatsApp
-Il numero configurato è `+39 331 770 2747`.
-Le richieste di prenotazione e gli ordini da asporto aprono WhatsApp con un messaggio precompilato.
+Caricare tutti i file nella root del repository GitHub Pages e abilitare Pages dalla branch `main`.

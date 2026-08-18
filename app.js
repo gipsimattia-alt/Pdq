@@ -1,4 +1,5 @@
 const WA='393317702747';
+const BOOKING_WA='393317702747';
 const pages=['home','menu','prenota','asporto'];
 const menuData={
   'Antipasti':[
@@ -29,9 +30,44 @@ const menuData={
   ]
 };
 const takeawayData={
-  'Antipasti':menuData['Antipasti'].slice(0,4),
-  'Primi':menuData['Primi'],
-  'Secondi':menuData['Secondi']
+  'Pizze stagionali':[
+    ['Cavajano','Fiordilatte, fiori di zucca, alici del Mediterraneo, tartufo nero scorzone estivo, olio Evo monocultivar Canino',15],
+    ['Kornoss','Pomodoro, girello di manzo locale in bassa cottura, mandorle della Costa dei Tirreni, mostarda di aglio nero, erbe spontanee',15],
+    ['Spereta','Fiordilatte, cipolla caramellata, prezzemolo, aglio rosso di Proceno, filetti di coregone marinato del Lago di Bolsena',15],
+    ['Grancarro','Fiordilatte, bottarga di coregone del Lago di Bolsena, zest di limone, pinoli',15]
+  ],
+  'Pizze bianche':[
+    ['Biancaneve','Fior di latte',7],['Cenerentola','Fior di latte, prosciutto crudo Salumificio Gam di Montefiascone',9],['Focaccia','Olio Evo della Tuscia, rosmarino',5],
+    ['Verace','Fiordilatte, patate dell’Alto Viterbese al forno, finocchietto selvatico, salsiccia artigianale MGE di Valentano',14],
+    ['Caciara','Fior di latte, crema artigianale di nostra produzione con formaggi del Viterbese',13],['Contadina','Fiordilatte, zucchine romanesche a julienne, prosciutto cotto di pollo ruspante',14],
+    ['Vegetariana','Fior di latte, verdure fresche di stagione',11],['Rustica','Fior di latte, chips di patate viola dell’Alto Viterbese, wurstel artigianale',13],
+    ['Campestre','Fiordilatte, pomodori ciliegino, rucola, grana locale',13],['Francescana','Fior di latte, tonno sott’olio, cipolla, olive nere',13],
+    ['Maremmana','Fior di latte, champignons, salsiccia artigianale GME di Valentano, prosciutto cotto Valleperlata di Montefiascone',15],
+    ['Montagnola','Fior di latte, prosciutto crudo affumicato, erborinato Piradoro',14],['Tricolore','Fior di latte, carpaccio di Manzetta Maremmana, rucola, grana locale',15],
+    ['Carbonara','Fior di latte, pancetta stagionata, uovo da galline libere del Viterbese, pecorino stagionato',13],['Burina','Fior di latte, pancetta stagionata, scamorza affumicata, patate dell’Alto Viterbese',13],
+    ['Ortolana','Fiordilatte, macedonia di verdure stagionali, salsiccia artigianale GME di Valentano',14],['Deliziosa','Fior di latte, mortadella di cinghiale, salsa tartufata, grana locale',14],
+    ['Birichina','Fior di latte, zucchine, scamorza affumicata, salsiccia artigianale GME di Valentano',13]
+  ],
+  'Pizze rosse':[
+    ['Ionica','Fiordilatte, pomodoro, Non è la Nduja, scamorza affumicata, melanzane',15],['Cacciatora','Fior di latte, pomodoro, prosciutto di cinghiale, olive nere',15],
+    ['Vulcanica','Fior di latte, pomodoro, salame piccante, salsiccia artigianale GME di Valentano, uovo, salsa tartufata',15],
+    ['Bisentina','Fior di latte, pomodoro, crema artigianale con formaggi del Viterbese, salsiccia artigianale, salsa tartufata',14],
+    ['Etrusca','Fior di latte, pomodoro, capocollo stagionato, pecorino Rocca',14],['Amatriciana','Fior di latte, pomodoro, guanciale stagionato, pecorino, pepe nero',13],
+    ['Audace','Fior di latte, pomodoro, salame piccante, erborinato Piradoro, cipolle',15],['Vitorchianese','Fior di latte, pomodoro, peperoncino di Cayenna, aglio rosso di Proceno, finocchietto selvatico',12],
+    ['Margherita','Fior di latte, pomodoro',9],['Napoletana','Fior di latte, pomodoro, alici sott’olio del Tirreno',12],['Marinara','Pomodoro, origano, aglio rosso di Proceno',9],
+    ['Diavola','Fior di latte, pomodoro, salame piccante, olive nere, peperoncino di Cayenna',13],['Capricciosa','Fior di latte, pomodoro, prosciutto cotto, carciofi, champignon, olive nere',14],
+    ['Peperina','Fiordilatte, pomodoro, peperoni, salsiccia artigianale MGE di Valentano',13],['Quattro Stagioni','Fior di latte, pomodoro, prosciutto cotto, carciofi, olive nere, champignon',14],
+    ['Macchiarola','Fiordilatte, pomodoro, funghi champignons, salsiccia artigianale MGE di Valentano',14],['Norcina','Fior di latte, pomodoro, salsiccia artigianale GME di Valentano, prosciutto cotto, pancetta stagionata',14]
+  ],
+  'Calzoni':[
+    ['Tradizionale','Fiordilatte, prosciutto cotto Valleperlata di Montefiascone',12],['Fantasioso','Fior di latte, salsiccia artigianale MGE di Valentano, prosciutto cotto Valleperlata di Montefiascone, funghi porcini',14],
+    ['Paesano','Fior di latte, verdure fresche di stagione ripassate, pecorino di Rocca, guanciale stagionato',14],['Infuocato','Fior di latte, salame piccante, Non è la Nduja, peperoncino di Cayenna',14]
+  ],
+  'Fritti':[
+    ['Il Fupplì','Supplì al telefono con farro del Pungolo, ragù di Cinta Senese e cuore filante di fiordilatte',3],['Il Nostrano','Tutte le nostre produzioni in un goloso assaggio di ognuna: un mix di sfizi prodotti in casa',10],
+    ['Le Grottane','Frittelle di patate dell’Alto Viterbese al pepe nero e rosmarino con maionese artigianale al limone fermentato',8],['Il Raggio di Sole','Fiori di zucca del nostro orto in pastella di grani antichi, fiordilatte e alici del Mediterraneo',3],
+    ['L’Ortolano','Verdurine dell’orto in pastella di farina di grani antichi e birra artigianale Blonde Ale',8],['Il Casereccio','Pizzette e frittelline in abbinamento ai salami della Tuscia e crema di bufala',10]
+  ]
 };
 let activeMenu='Antipasti', activeTake='Antipasti', cart={};
 function show(page){pages.forEach(p=>document.getElementById(p).classList.toggle('active',p===page));document.querySelectorAll('.nav-item').forEach(b=>b.classList.toggle('active',b.dataset.go===page));window.scrollTo({top:0,behavior:'smooth'});}
@@ -43,6 +79,6 @@ function updateTotal(){let total=0;for(const [name,q] of Object.entries(cart)){f
 function render(){chips('menuChips',Object.keys(menuData),activeMenu,v=>activeMenu=v);chips('takeawayChips',Object.keys(takeawayData),activeTake,v=>activeTake=v);renderMenu();renderTake();updateTotal()}
 render();
 const date=document.getElementById('bookingDate');date.min=new Date().toISOString().slice(0,10);document.getElementById('bookingPeople').oninput=e=>document.getElementById('bookingSummary').textContent=`${e.target.value} ${e.target.value==='1'?'persona':'persone'}`;
-document.getElementById('bookingForm').onsubmit=e=>{e.preventDefault();const d=date.value;const p=document.getElementById('bookingPeople').value;const t=document.getElementById('bookingTime').value;const n=document.getElementById('bookingName').value;const phone=document.getElementById('bookingPhone').value;const notes=document.getElementById('bookingNotes').value;const msg=`🍽️ RICHIESTA PRENOTAZIONE — PARCO DELLE QUERCE\n\n👤 Nome: ${n}\n📱 Telefono: ${phone}\n📅 Data: ${d}\n🕐 Orario: ${t}\n👥 Persone: ${p}\n📝 Note/allergie: ${notes||'Nessuna'}\n\nRichiesta inviata dal sito.`;window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank');toast('Richiesta pronta su WhatsApp.')};
+document.getElementById('bookingForm').onsubmit=e=>{e.preventDefault();const d=date.value;const p=document.getElementById('bookingPeople').value;const t=document.getElementById('bookingTime').value;const n=document.getElementById('bookingName').value;const phone=document.getElementById('bookingPhone').value;const notes=document.getElementById('bookingNotes').value;const msg=`🍽️ RICHIESTA PRENOTAZIONE — PARCO DELLE QUERCE\n\n👤 Nome: ${n}\n📱 Telefono: ${phone}\n📅 Data: ${d}\n🕐 Orario: ${t}\n👥 Persone: ${p}\n📝 Note/allergie: ${notes||'Nessuna'}\n\nRichiesta inviata dal sito.`;window.open(`https://wa.me/${BOOKING_WA}?text=${encodeURIComponent(msg)}`,'_blank');toast('Richiesta pronta su WhatsApp.')};
 document.getElementById('sendOrder').onclick=()=>{const items=[];let total=0;for(const [name,q] of Object.entries(cart)){if(q){let item;for(const cat of Object.values(takeawayData)){item=cat.find(x=>x[0]===name);if(item)break}if(item){items.push(`${q}× ${name} — €${(item[2]*q).toFixed(2)}`);total+=item[2]*q}}}if(!items.length){toast('Aggiungi almeno un prodotto.');return}const msg=`🥡 ORDINE DA ASPORTO — PARCO DELLE QUERCE\n\n${items.join('\n')}\n\n💶 Totale indicativo: €${total.toFixed(2)}\n\nDa confermare su WhatsApp.`;window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank')};
 function toast(text){const t=document.getElementById('toast');t.textContent=text;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400)}
