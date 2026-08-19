@@ -1,16 +1,14 @@
-# Parco delle Querce — sito prenotazioni
+# Parco delle Querce — GitHub Pages
 
-Sito statico pronto per GitHub Pages.
+Upload all files in this folder to the root of the GitHub Pages repository.
 
-## Sezioni
-- Home
-- Menù
-- Prenota un tavolo
-- Asporto: pizze bianche, pizze rosse, pizze stagionali, calzoni e fritti
+## Navigation
+Home · Menù · Prenota · Asporto
 
-## WhatsApp prenotazioni
-Il pulsante **Prenota un tavolo** invia la richiesta direttamente a Cristiano su WhatsApp:
-**+39 331 770 2747**.
+## Asporto
+Pizze bianche, pizze rosse, pizze stagionali, calzoni e fritti.
 
-## Pubblicazione
-Caricare tutti i file nella root del repository GitHub Pages e abilitare Pages dalla branch `main`.
+## WhatsApp
+Prenotazioni e ordini vengono inviati a Cristiano: +39 331 770 2747.
+
+Important: keep the `assets` folder in the repository next to `index.html`, `style.css`, and `app.js`.
